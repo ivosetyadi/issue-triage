@@ -59,7 +59,7 @@ delete process.env.INPUT_CONFIG;
 // missing config → defaults
 process.env.INPUT_CONFIG = path.join(__dirname, 'nope.yml');
 const d = loadConfig();
-ok(d['duplicate-threshold'] === 0.55 && d.comment === true, 'missing config → defaults');
+ok(d['duplicate-threshold'] === 0.35 && d.comment === true, 'missing config → defaults');
 delete process.env.INPUT_CONFIG;
 
 console.log(`✓ ${pass} assertions passed`);

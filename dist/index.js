@@ -90,7 +90,7 @@ function pickAssignees(labels, assigneeMap) {
 // assignees:
 //   security: alice, bob
 function loadConfig() {
-  const cfg = { 'duplicate-threshold': 0.55, comment: true, labels: {}, assignees: {} };
+  const cfg = { 'duplicate-threshold': 0.35, comment: true, labels: {}, assignees: {} };
   const path = process.env.INPUT_CONFIG || '.issuetriage.yml';
   let text;
   try {

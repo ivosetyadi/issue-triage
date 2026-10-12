@@ -1,6 +1,6 @@
 # Issue Triage configuration (optional). Built-in label rules always apply.
 
-duplicate-threshold: 0.55     # 0..1 — higher means stricter duplicate matching
+duplicate-threshold: 0.35     # 0..1 — higher means stricter duplicate matching
 comment: true                 # comment when a likely duplicate is found
 
 # Extend / override the built-in keyword→label rules.
