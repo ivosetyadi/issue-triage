@@ -1,0 +1,50 @@
+name: 'Issue Triage'
+description: 'Auto-label new issues, flag likely duplicates, and assign — stateless, with optional embeddings (BYOK).'
+author: 'Ivo Setyadi'
+branding:
+  icon: 'tag'
+  color: 'blue'
+
+inputs:
+  config:
+    description: 'Path to the Issue Triage config file.'
+    required: false
+    default: '.issuetriage.yml'
+  label:
+    description: 'Apply auto-detected labels (true/false).'
+    required: false
+    default: 'true'
+  duplicates:
+    description: 'Detect and flag likely duplicate issues (true/false).'
+    required: false
+    default: 'true'
+  assign:
+    description: 'Assign based on label→assignee map in config (true/false).'
+    required: false
+    default: 'true'
+  api-key:
+    description: 'Optional OpenAI-compatible key for embedding-based duplicate detection. Empty = lexical similarity.'
+    required: false
+    default: ''
+  base-url:
+    description: 'Embeddings base URL (OpenAI-compatible).'
+    required: false
+    default: ''
+  embed-model:
+    description: 'Embedding model id.'
+    required: false
+    default: ''
+  token:
+    description: 'GitHub token used to read/label/comment/assign issues.'
+    required: false
+    default: ${{ github.token }}
+
+outputs:
+  labels:
+    description: 'Comma-separated labels applied.'
+  duplicates:
+    description: 'Comma-separated issue numbers flagged as possible duplicates.'
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'

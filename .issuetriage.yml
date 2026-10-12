@@ -1,0 +1,14 @@
+# Issue Triage configuration (optional). Built-in label rules always apply.
+
+duplicate-threshold: 0.55     # 0..1 — higher means stricter duplicate matching
+comment: true                 # comment when a likely duplicate is found
+
+# Extend / override the built-in keyword→label rules.
+labels:
+  # performance: slow, lag, timeout, memory leak
+  # ci: pipeline, workflow, action failing
+
+# Map a label to the user(s) who should be assigned.
+assignees:
+  # security: ivosetyadi
+  # bug: ivosetyadi

@@ -1,0 +1,15 @@
+# Example consumer workflow. Copy into your repo at
+# .github/workflows/issue-triage.yml
+name: Issue Triage
+on:
+  issues:
+    types: [opened, edited]
+permissions:
+  issues: write
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ivosetyadi/issue-triage@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
